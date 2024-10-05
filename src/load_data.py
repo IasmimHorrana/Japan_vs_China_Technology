@@ -10,7 +10,9 @@ csv_path = '../data/Big_Japan_vs_China_Technology.csv'
 # Ler o arquivo CSV
 df = pd.read_csv(csv_path)
 
-# Inserir o DataFrame no banco de dados
-df.to_sql('dataset_table', engine, if_exists='replace', index=False)
+# Inserir o DataFrame no banco de dados 
+df.to_sql('dataset_table', engine, if_exists='append', index=False) #if_exists='replace'
 
 print("Dados inseridos com sucesso!")
+
+
